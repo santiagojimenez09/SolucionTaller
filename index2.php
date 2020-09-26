@@ -9,14 +9,14 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Taller</a>
+                <a class="navbar-brand" href="index.php">Taller</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Punto 2</a>
+                    <a class="nav-link" href="index2.php">Punto 2</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Punto 3</a>
@@ -55,9 +55,17 @@
                         $peso=$_POST["peso"];
                         $altura2=$_POST["altura2"];
                         
-                        $total=$peso/($altura2*2);
-                        echo("Su IMC es ".$total);
+                        $total=$peso/($altura2*$altura2);
+                        echo('Su IMC es ' .$total);
+                        if($total < 18.5){
+                            echo(' su peso es insuficiente');
+                        } elseif ($total >=18.5 && $total <=24.9){
+                            echo(' su peso es normal');
+                        }
+                        
                         ?>
                         </h4>
 
                         <?php endif ?>
+
+                       
