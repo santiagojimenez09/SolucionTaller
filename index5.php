@@ -42,7 +42,7 @@
                         <form class="mt-4" action="index5.php" method="POST">
                             <div class="row">
                                 <div class="col">
-                                ¿Cuántas horas trabajaste en la semana?   <input type="text" class="form-control" placeholder="HorasTrabajadas" name="cantidadHoras">
+                                    <input type="text" class="form-control" placeholder="HorasTrabajadas" name="cantidadHoras">
                                 
                                 <button type="submit" class="btn btn-primary mt-1 btn-block" name="botonCalcular">Calcular </button>
     <?php
@@ -61,11 +61,11 @@
                 $pagoHorastrabajadas=40*20000;
                 $pagoDiferenciaHoras=($diferenciaHoras*25000);
                 $pagoTotal= $pagoDiferenciaHoras+$pagoHorastrabajadas;
-                echo("La cantidad total de horas fue: ".$cantidadHoras);
+                echo("La cantidad total de horas trabajadas es: ".$cantidadHoras);
                 echo("<br>");
-                echo("La cantidad de horas extras trabajadas fue: ".$diferenciaHoras);
+                echo("La cantidad de horas extras trabajadas es: ".$diferenciaHoras);
                 echo("<br>");
-                echo("El pago que recibes por las horas extras trabajadas es: ".$pagoDiferenciaHoras);
+                echo("El pago recibido por las horas extras trabajadas es: ".$pagoDiferenciaHoras);
                 echo("<br>");
                 echo("El pago total es: ".$pagoTotal);
             }
