@@ -19,13 +19,13 @@
                     <a class="nav-link" href="index2.php">Punto 2</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="">Punto 3</a>
+                    <a class="nav-link" href="index3.php">Punto 3</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Punto 4</a>
+                    <a class="nav-link" href="index4.php">Punto 4</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Punto 5</a>
+                    <a class="nav-link" href="index5.php">Punto 5</a>
                     </li>
                     
                     
@@ -91,7 +91,7 @@
                         ?>
                         </h4>
 
-                        <?php endif ?>
+                        <?php endif ?>  
                         
     
     </main>

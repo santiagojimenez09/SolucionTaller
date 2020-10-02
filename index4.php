@@ -31,59 +31,65 @@
                     
                 </ul>
             </div>
-        </nav>
+        </nav>       
+    
     </header>
+    
+    
     <main>
-            <div class="container">
+    <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-4">
 
-                        <form class="mt-4" action="index2.php" method="POST">
+                        <form class="mt-4" action="index4.php" method="POST">
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="PesoCorporal" name="peso">
+                                    <input type="text" class="form-control" placeholder="Precio" name="precio">
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Altura" name="altura2">
+                                    <input type="text" class="form-control" placeholder="Cantidad" name="cantidad">
                                 </div>
                             </div>
-                                <button type="submit" class="btn btn-primary mt-2 btn-block" name="botonCalcular">Calcular IMC</button>
+                                <button type="submit" class="btn btn-primary mt-2 btn-block" name="botonCalcular">Calcular</button>
                     
-                    </form>
-                    <?php if(isset($_POST["botonCalcular"])):  ?>
-                        <h4>
-                        <?php
-                        $peso=$_POST["peso"];
-                        $altura2=$_POST["altura2"];
-                        
-                        $total=$peso/($altura2*$altura2);
-                        echo('Su IMC es ' .$total);
-                        if($total < 18.5){
-                            echo(' su peso es insuficiente');
-                        } elseif ($total >=18.5 && $total <=24.9){
-                            echo(' su peso es normal');
-                        }
-                        if($total >=25 && $total <=26.9 ){
-                            echo(' tiene sobrepeso grado 1');
-                        } elseif ($total >=27 && $total <=29.9 ){
-                            echo(' tiene sobrepeso grado 2 (preobesidad)');
-                        }
-                        if($total >=30 && $total <=34.9 ){
-                            echo(' tiene obesidad tipo 1');
-                        } elseif ($total >=35 && $total <=39.9 ){
-                            echo(' tiene obesidad tipo 2');
-                        }
-                        if($total >=40 && $total <=49.9 ){
-                            echo(' tiene obesidad tipo 3 (morbida)');
-                        } elseif ($total >=50 ){
-                            echo(' tiene obesidad tipo 4 (extrema)');
-                        }
-                        
-                        ?>
-                        </h4>
+                         </form>
+        <?php
+        if(isset($_POST["botonCalcular"])): ?>
+            <h4>
+            <?php
+            $precio=$_POST["precio"];
+            $cantidad=$_POST["cantidad"];   
+            $total=$precio*$cantidad;
+            
+            if($cantidad==3){
+                $descuento=$total*(10/100);
+                $pago=$total-$descuento;
+                echo("El descuento brindado es igual al 10% del total de la compra: ".$descuento);
+                echo("<br>");
+                echo("El valor total a pagar es: ".$pago);
+            }elseif($cantidad>3 && $cantidad<=8){
+                $descuento=$total*(20/100);
+                $pago=$total-$descuento;
+                echo("El descuento brindado es igual al 20% del total de la compra: ".$descuento);
+                echo("<br>");
+                echo("El valor total a pagar es: ".$pago);
+            }elseif($cantidad>8){
+                $descuento=$total*(50/100);
+                $pago=$total-$descuento;
+                echo("El descuento brindado es igual al 50% del total de la compra: ".$descuento);
+                echo("<br>");
+                echo("El valor total a pagar es: ".$pago);
+            }
+            
+            ?>
+            </h4>
+            <?php endif ?>
 
-                        <?php endif ?>
-        
+                        
+
+                        
+                        
+    
     </main>
     
     
@@ -95,5 +101,3 @@
 
 </body>
 </html>
-
-                       
